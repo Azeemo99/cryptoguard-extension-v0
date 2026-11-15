@@ -10,8 +10,6 @@ This is a Docker-containerisation project. To run it:
 - select load unpacked, and select 'extensions' folder from this repo
 - open up extension by clicking icon in top right
 
-
-
 # 1. Manifesto
 ## 1.1 Project Overview
 ### 1.1.1 Problem Statement
@@ -19,9 +17,9 @@ This project provides extra security for those who are using blockchain networks
 with that message. This project provides a free and efficient way to classify any message under 512 tokens with a blockchain-adapted transformer model.
 
 ### 1.1.2 User Circumstance
-A blockchain currency user, let's name him Sam, in a blockchain messaging setting – e.g. a Discord group focused on blockchain. There, a new user drops a message saying 'Claim your free ETH at http:something'. Sam
-is tempted and doesn't want to miss out on free crypto, but is also aware that there is a chance that this could be a ruse to steal his data. He wants a quick verdict on the risk of clicking on the link provided, and
-so he uses the browser extension – clicking on its icon and putting in the message he received. Within seconds, he gets a classification, a confidence score, and a risk level.
+A blockchain currency user in a blockchain messaging setting – e.g. a Discord group focused on blockchain. There, a new user drops a message saying 'Claim your free ETH at http:something'. User is tempted and doesn't
+want to miss out on free crypto, but is also aware that there is a chance that this could be a ruse to steal his data. He wants a quick verdict on the risk of clicking on the link provided, and so he uses the browser 
+extension – clicking on its icon and putting in the message he received. Within seconds, he gets a classification, a confidence score, and a risk level.
 
 ## 1.2 Requirements and Criteria
 ### 1.2.1 Functional Requirements
@@ -198,33 +196,35 @@ is presented below the Submit button.
 
 ### 2.2 API Contract
 #### Route Endpoint
+```
 method: POST
 route: /api/v1/predict
 description: Classify user input
+```
 
 #### Request Schema
+```
 {
-
     "text": "string (min length: 1)"
 }
-
+```
 #### Response Schema (Status 200)
+```
 {
-
     "is_phishing": boolean,
     "confidence_score": float,
     "risk_level": "string"
 }
-
+```
 #### Response Schema (Status 400)
+```
 {
-
     "detail": "Invalid input"
 }
-
+```
 #### Response Schema (Status 422)
+```
 {
-
     "detail": [
         {
             "loc": ["body", "text"],
@@ -233,13 +233,13 @@ description: Classify user input
         }
     ]
 }
-
+```
 #### Response Schema (Status 500)
+```
 {
-
     "detail": "Prediction failed"
 }
-
+```
 ### 2.3 Delivery Mapping
 | Requirement                 | Component              | Implementation                                                                                                                                                                                                |
 |-----------------------------|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
