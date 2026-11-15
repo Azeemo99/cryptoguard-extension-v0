@@ -18,9 +18,11 @@ You can find the code for that here: https://github.com/Azeemo99/cryptoguard.git
 
 
 Classification of a phishing attempt:
+
 ![img.png](img.png)
 
 Classification of a harmless message:
+
 ![img_1.png](img_1.png)
 
 
