@@ -15,7 +15,15 @@ NOTE: The DistilBERT blockchain-adapted model was trained as part of a training 
 where a blockchain data corpus was synthesised and fed to multiple BERT models.
 You can find the code for that here: https://github.com/Azeemo99/cryptoguard.git
 ```
+
+```
+Classification of a phishing attempt:
 ![img.png](img.png)
+
+Classification of a harmless message:
+![img_1.png](img_1.png)
+```
+
 # 1. Manifesto
 ## 1.1 Project Overview
 ### 1.1.1 Problem Statement
